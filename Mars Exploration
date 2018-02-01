@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static void marsExploration(String s) {
+       StringBuilder sb=new StringBuilder(s);
+        int count=0;
+        for(int i=0;i<sb.length();i=i+3){
+            char first = sb.charAt(i);
+             char sec = sb.charAt(i+1);
+             char third = sb.charAt(i+2);
+            if(first != 'S') {
+                count++;
+            }
+            if(sec != 'O'){
+                count++;
+            }
+            if(third !='S'){
+                count++;
+            }
+            //System.out.println(first+"1"+sec+"2"+third+"3");
+        }
+        System.out.println(count);
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String s = in.next();
+        Solution sc = new Solution();
+        sc.marsExploration(s);
+       // int result = marsExploration(s);
+       // System.out.println(result);
+       // in.close();
+    }
+}
