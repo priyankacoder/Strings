@@ -1,0 +1,38 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static void caesarCipher(String s, int k) {
+        StringBuilder sb=new StringBuilder(s);
+        
+        for(int i=0;i<sb.length();i++){
+            char x = sb.charAt(i);
+           if(x<='z' && x >='a'){
+           x = (char) (((x - 'a' + k) % 26) + 'a');
+            System.out.print(x);
+            }else
+             if(x<='Z' && x >='A'){
+           x = (char) (((x - 'A' + k) % 26) + 'A');
+            System.out.print(x);
+            }else{
+                 System.out.print(x); 
+             }
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        String s = in.next();
+        int k = in.nextInt();
+        Solution sc = new Solution();
+        sc.caesarCipher(s, k);
+       // String result = caesarCipher(s, k);
+       // System.out.println(result);
+        //in.close();
+    }
+}
