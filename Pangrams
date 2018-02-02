@@ -1,0 +1,31 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    static void caesarCipher(String s) {
+        s = s.toLowerCase();
+      s = s.replaceAll("\\s+","");
+        boolean success = true;
+        for(char c = 'a';c <= 'z'; ++c) {
+            if(!s.contains(String.valueOf(c))) {
+                success = false;
+                break;
+            }
+        }
+        if (success)
+    System.out.println("pangram");
+else
+    System.out.println("not pangram");
+         
+    }
+    public static void main(String args[] ) throws Exception {
+       Scanner sn = new Scanner(System.in);
+        String s = sn.nextLine();
+        Solution sc = new Solution();
+        sc.caesarCipher(s);
+      
+    }
+}
