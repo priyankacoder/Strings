@@ -1,0 +1,57 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String s = in.next();
+        int n = in.nextInt();
+        HashMap<Character,Integer> hm=new HashMap<Character,Integer>(); 
+        char j ='a';
+        for(int i = 1;i<27;i++){
+            hm.put(j,i); 
+            j += 1;
+        }
+        StringBuilder sc = new StringBuilder(s);
+        int[] arr = new int[sc.length()];
+        for(int k=0;k<sc.length();k++){
+            
+             for(Map.Entry m:hm.entrySet()){ 
+                if(sc.charAt(k) == m.getKey()){
+                    arr[k] = (int)m.getValue();
+                }
+              }  
+        }
+          int count = 1;
+ for(int o=0;o<s.length();o++){
+     for(int p = o+1;p<s.length();p++){
+         if(arr[o] == arr[p]){
+            count++;
+             arr[p]= count *arr[o]; 
+         }
+     }
+    // System.out.println(count);
+     count =1;
+ }
+        boolean flag = false;
+        for(int b = 0; b < n; b++){
+           int num = in.nextInt();
+           for(int l =0 ;l<arr.length;l++){
+                if(num == arr[l]){
+                        flag = true;
+               break;
+                }else
+                    flag = false;
+              }
+            if(flag == true){
+                System.out.println("Yes");
+            }else{
+                System.out.println("No");}
+        }
+        
+    }
+}
