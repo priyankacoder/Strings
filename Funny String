@@ -1,0 +1,41 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static void funnyString(String s){
+        StringBuilder sc = new StringBuilder(s);
+         int sum = 0;
+        int l = s.length()-1;
+        boolean flag = false;
+        for (int i=1;i<sc.length();i++) {
+            if(Math.abs(sc.charAt(i)-sc.charAt(i-1)) == Math.abs(sc.charAt(l)-sc.charAt(l-1))){
+                flag = true;
+            }else{
+                flag = false;
+                break;
+            }
+            l--;
+          
+        }
+        if(flag == false){
+            System.out.println("Not Funny");
+        }else{
+            System.out.println("Funny");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int q = in.nextInt();
+        for(int a0 = 0; a0 < q; a0++){
+            String s = in.next();
+            Solution sc = new Solution();
+            sc.funnyString(s);
+         
+        }
+    }
+}
