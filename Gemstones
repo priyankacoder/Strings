@@ -1,0 +1,58 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    
+    static void gemstones(String[] arr){
+        int j = 0;
+        for(int i=1;i<arr.length;i++){
+          
+          String str1 = arr[j];
+           String str2 = arr[i];
+            StringBuilder sn = new StringBuilder(str1);
+            StringBuilder sh = new StringBuilder(str2);
+             String str3 = "";
+            for(int k = 0;k<str1.length();k++){
+               char firchar =  sn.charAt(k);
+                for(int l = 0;l<str2.length();l++){
+                    if(firchar == sh.charAt(l)){
+                         str3 = str3 +firchar;
+                        break;
+                    }
+                }
+                
+             //   m++;
+            }
+          j++;
+            arr[i]=str3;
+               
+          //  j++;
+        }
+        String aa = arr[j];
+        String newFirst="";
+       for(int i=0;i<aa.length();i++)
+            { 
+                 if(newFirst.indexOf(aa.charAt(i))==-1)
+                  newFirst+=aa.charAt(i);
+            }
+        System.out.println(newFirst.length());
+        
+        
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        String[] arr = new String[n];
+        for(int arr_i = 0; arr_i < n; arr_i++){
+            arr[arr_i] = in.next();
+        }
+        Solution sc = new Solution();
+        sc.gemstones(arr);
+        //int result = gemstones(arr);
+        //System.out.println(result);
+    }
+}
