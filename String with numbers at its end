@@ -1,0 +1,36 @@
+/*package whatever //do not write package name here */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Solution {
+    public void numstr(String s){
+        StringBuilder sm = new StringBuilder(s);
+        //System.out.print(s);
+        int count = 0,tem = 0;
+        String test = "";
+        for(int i= (s.length()-1);i>=0;i--){
+            //System.out.println(sm.charAt(i));
+            if(sm.charAt(i) >='0' && sm.charAt(i) <='9'){
+                 test  = test + sm.charAt(i);
+            }else{
+                count++;
+            }
+        }
+        test  = new StringBuilder(test).reverse().toString();
+       int a = Integer.parseInt(test);
+       if(a == count){
+           System.out.println(1);
+       }else
+       System.out.println(0);
+       
+    }
+	public static void main (String[] args) {
+		Scanner sc = new Scanner(System.in);
+		//int n = sc.nextInt();
+		String s = sc.nextLine();
+		Solution sn = new Solution();
+		sn.numstr(s);
+	}
+}
