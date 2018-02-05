@@ -1,0 +1,34 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static void theLoveLetterMystery(String s){
+        StringBuilder sc = new StringBuilder(s);
+        int l = sc.length() - 1;
+        int count = 0,i=0;
+         
+        while(i<l){
+           char k = sc.charAt(l);
+          count += Math.abs(sc.charAt(i) - sc.charAt(l));
+            i++; l--;
+        
+            
+        }
+       
+            System.out.println(count);
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int q = in.nextInt();
+        for(int a0 = 0; a0 < q; a0++){
+            String s = in.next();
+            Solution sn = new Solution();
+            sn.theLoveLetterMystery(s);
+        }
+    }
+}
