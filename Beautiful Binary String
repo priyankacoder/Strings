@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static void beautifulBinaryString(String b) {
+       StringBuilder sc=  new StringBuilder(b);
+        int count = 0,m=0;
+        boolean flag = false;
+      for(int i=0;i<b.length();i++){
+          if(i+2<b.length()){
+            if(sc.charAt(i) == '0' && sc.charAt(i+1) == '1' && sc.charAt(i+2) == '0'){
+                int k =i+2;
+                count++;
+                i=k;
+            }
+          }
+        }
+       
+         System.out.println(count);
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        String b = in.next();
+        Solution sc = new Solution();
+        sc.beautifulBinaryString(b);
+    }
+}
