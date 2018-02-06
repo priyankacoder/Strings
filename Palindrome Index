@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static int palindromeIndex(String s){
+        StringBuilder sc = new StringBuilder(s);
+        
+        for(int i=0, l = s.length()-1;i<l;i++,l--)
+            if(sc.charAt(i) != sc.charAt(l))
+                   if(ispalindrome(s,i))
+                       return i;
+                   else if(ispalindrome(s,l))
+                       return l;
+            return -1;
+        }
+    static boolean ispalindrome(String s,int n){
+         StringBuilder sc = new StringBuilder(s);
+        for(int i=n+1,  l = s.length()-1-n;i<l;i++,l--)
+            if(sc.charAt(i) != sc.charAt(l))
+                return false;
+            return true;
+           
+    }  
+
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int q = in.nextInt();
+        for(int a0 = 0; a0 < q; a0++){
+            String s = in.next();
+            int result = palindromeIndex(s);
+            System.out.println(result);
+        }
+    }
+}
