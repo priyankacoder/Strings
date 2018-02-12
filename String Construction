@@ -1,0 +1,29 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static void stringConstruction(String s) {
+         HashSet<Character> h = new HashSet<Character>();
+        for (char c : s.toCharArray()){
+            h.add(new Character(c));
+        }
+      System.out.println( h.size());
+        
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int q = in.nextInt();
+        for(int a0 = 0; a0 < q; a0++){
+            String s = in.next();
+            Solution sk = new Solution();
+            sk.stringConstruction(s);
+         
+        }
+        in.close();
+    }
+}
